@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets\css\estilo.css">
+    <link rel="stylesheet" href="assets\css\exercicio.css">
+    <title>Guia JAVA</title>
+</head>
+<body class="exercicio">
+    <header class="cabecalho">
+        <h1>Guia JAVA</h1>
+        <h2>Visualização do Conteúdo</h2>
+    </header> 
+    <nav class="navegacao">
+        <a href="#" class="verde">Sem Formatação</a>
+        <a href="index.html" class="vermelho">Voltar</a>
+    </nav> 
+    <main class="principal">
+        <div class="conteudo">
+
+            <div class="titulo">Forech</div>
+            
+
+            <p><strong>Para que serve o For-Each Loop em Java ?</strong><br>
+                O for-each é uma estrutura de iteração para navegar pelos elementos 
+                de uma coleção (ou seja, pode ser listas, mapas e conjuntos) ou array 
+                de forma mais fácil e sintaticamente mais simples. Antes de apresentá-lo, 
+                vamos entender um pouco de como eram feitas iterações anteriormente para 
+                compreender um pouco das evoluções do Java e ter uma visão abrangente da <br>
+                Vamos inicialmente usar como exemplo uma lista de letras do alfabeto criando um 
+                ArrayList.
+            </p>
+            <p><img src="imagens/listABC.png" alt="Imagem do conteudo"></p>
+            
+            <p><strong>Era "pré For-Each"</strong><br>
+                Algum tempo atrás, especificamente na versão 4, em Java não era possível iterar uma coleção 
+                com tanta facilidade como atualmente. Era necessário utilizar a interface Iterator para ir navegando nos elementos.
+            </p>
+            <p><img src="imagens/antigamente.png" alt="Imagem do conteudo"></p>
+            <p><strong>Estrutura "while".</strong><br>
+                <img src="imagens/while.png" alt="Imagem do conteudo"><br>
+                Dessa forma, enquanto o tamanho da lista for maior que o índice a execução acontecerá. 
+                Também temos o mesmo resultado das alternativas anteriores :)
+            </p><br>
+            <h1>For-Each Loop lançado</h1>
+            <p>Com o lançamento da versão 5 do Java, o For-Each Loop facilitou muito essa operação deixando de ser necessário 
+                utilizar Iterator, while ou até loop com índices.
+            </p>
+            <p><img src="imagens/forech.png" alt="Imagem do conteudo"></p>
+            <p>Como você pode ver, é mais simples e legível e menos verboso. Pode-se ler a estrutura até com maior facilidade, 
+                por exemplo: "para cada letra em letras, imprima no console".
+
+                <h3>Também é possível usar For-Each com arrays.</h3>
+                <img src="imagens/arrays.png" alt="Imagem do conteudo"><br>
+            </p>
+            <p><strong>Estrutura Set também usa Forech</strong><br>
+                <img src="imagens/set.png" alt="Imagem do conteudo"><br>
+            </p> 
+            <button><a href="https://www.dio.me/articles/como-utilizar-for-each-loop-em-java">Mais Informações</a></button>
