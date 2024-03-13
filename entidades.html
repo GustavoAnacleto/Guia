@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets\css\estilo.css">
+    <link rel="stylesheet" href="assets\css\exercicio.css">
+    <title>Exercício</title>
+</head>
+<body class="exercicio">
+    <header class="cabecalho">
+        <h1>Guia JAVA</h1>
+        <h2>Visualização do Conteúdo</h2>
+    </header> 
+    <nav class="navegacao">
+        <a href="#" class="verde">Sem Formatação</a>
+        <a href="index.html" class="vermelho">Voltar</a>
+    </nav> 
+    <main class="principal">
+        <div class="conteudo">
+
+            <div class="titulo">Entidades</div>
+
+            <h1>Modelo de domínio</h1>
+            <img src="imagens/UML.png" alt="uml">
+            <p>Seguindo esse modelo de domínio iniciamos a criação primeiro da classe independente a Category.
+            </p><img src="imagens/category.png" alt="classe java">
+            Com esse comando criamos a classe Category dentro do pacote entities.
+            <p>Uma classe Java recebe seus atributos todos declarados como private por motivo de encapsulamento, depois 
+                inserimos os gets e sets. <br> Agora criamos o Construtor padrão e o Construtor com argumentos que serão 
+                usados na instanciação dos objetos do sistema. <br> Agora vamos inserir o hashcode e equals para ter um parâmetro 
+                de comparação entre duas classes. Comparando apenas com id.
+            </p>
+            <img src="imagens/class.png" alt="classe java">
+            <p>Agora pensando no sistema de camadas vamos criar dentro do pacote resource a class CategoryResource.</p>
+            <img src="imagens/RestController.png" alt="RestController">
+            <p>Inserindo e importando a annotation <strong>@RestController</strong> para informar que está classe é um controlador REST.</p>
+            <img src="imagens/RequestMapping.png" alt="RestController">
+            <p>Agora Inserimos a <strong>@RequestMapping</strong> para passar a rota rest do recurso. sabemos então que esse recurso 
+                responde nessa rota /categories. <br>
+                Dentro da classe vamos criar o método ResponseEntity que é um método que vai encapsular uma resposta http. 
+                Esse método é do tipo Generics que indica dentro  <>  o tipo de dado que vai receber, e chamamos o findAll que retorna todas 
+                as categorias do sistema.
+                <img src="imagens/ResponseEntity.png" alt="RestController"> <br>
+                Linha20: Criamos uma List que é uma interfaceJava do tipo Category que é a classe que criamos instanciando com o ArrayList que é
+                o padrão usado no List. <br>
+                Linha 21 e 22: Inserimos duas categorias em nosso sistema. <br>
+                Linha 23: Feito o <strong>return ResponseEntity.ok().body(list);</strong> onde o método chama o ok que permite eu responder uma resposta 200
+                que é quando a requisição foi aceita e o recurso foi entregue. <br>
+                O .body(recebendo list para definir o corpo da resposta).  <br>
+                Por fim para configurar que esse método vai ser um endpoint do meu recurso categories inserimos o <Strong>@GetMapping</Strong> como visto
+                na imagem acima.
+            </p>
+            <h1>Iniciando teste no POSTMAN</h1>
+            <img src="imagens/categorieAll.png" alt="postman">
+            <p>Após criar uma nova collection no postman e nomear de Catalog e criar a requisição categoriesAll executamos o teste e recebemos como
+                retorno a resposta abaixo, trazendo todas as categorias do sistema. 
+            </p>
+            <img src="imagens/resultCategoriesAll.png" alt="result">
+            <p>Concluimos então a classe Category.</p>
+
+
+
+        </div>
+    </main>
+    <footer class="rodape">
+        Guga-Nascimento
+    </footer>
+</body>
+</html>
