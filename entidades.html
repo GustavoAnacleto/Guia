@@ -19,7 +19,7 @@
     <main class="principal">
         <div class="conteudo">
 
-            <div class="titulo">Entidades</div>
+            <div class="titulo">Category</div>
 
             <h1>Modelo de domínio</h1>
             <img src="imagens/UML.png" alt="uml">
@@ -58,8 +58,100 @@
             </p>
             <img src="imagens/resultCategoriesAll.png" alt="result">
             <p>Concluimos então a classe Category.</p>
+            <div class="titulo">CategoryService</div>
+            <h3>Criando a classe CategoryService para que nela tenha a regra de negócios</h3>
+            <img src="imagens/CategoryService.png" alt="result">
 
-
+            <h1>Métodos</h1>
+            
+            <h3>findAllPaged(Pageable pageable):</h3>
+            <p>
+                Este método é responsável por recuperar todas as categorias de forma paginada. Ele utiliza o CategoryRepository 
+                para acessar o banco de dados e recuperar os dados. Ele retorna uma página de CategoryDTO, que contém os dados 
+                das categorias de forma mais simplificada.
+            </p>
+            <h3>findById(Long id):</h3>
+            <p>
+                Este método recupera uma categoria específica com base no seu ID. Ele utiliza o CategoryRepository para buscar a 
+                categoria no banco de dados. Se a categoria não for encontrada, uma exceção ResourceNotFoundException é lançada.
+            </p>
+            <h3>insert(CategoryDTO dto):</h3>
+            <p>
+                Este método insere uma nova categoria no banco de dados. Ele cria uma nova instância da entidade Category, define seus 
+                atributos com base nos dados fornecidos no DTO e utiliza o CategoryRepository para salvar a categoria no banco de dados. 
+                Em seguida, ele retorna um CategoryDTO representando a categoria recém-criada.
+            </p>
+            <h3>update(Long id, CategoryDTO dto):</h3>
+            <p>
+                Este método atualiza uma categoria existente no banco de dados com base no seu ID. Ele busca a categoria pelo ID 
+                usando o método getReferenceById do CategoryRepository. Se a categoria não for encontrada, uma exceção ResourceNotFoundException 
+                é lançada. Se a categoria for encontrada, seus atributos são atualizados com base nos dados fornecidos no DTO e, em seguida, 
+                a categoria é salva no banco de dados. O método retorna um CategoryDTO representando a categoria atualizada.
+            </p>            
+            <h3>delete(Long id)</h3>
+            <p>
+                Este método exclui uma categoria do banco de dados com base no seu ID. Primeiro, ele verifica se a categoria existe no banco 
+                de dados usando o método existsById do CategoryRepository. Se a categoria não existir, uma exceção ResourceNotFoundException 
+                é lançada. Se a categoria existir, ela é excluída do banco de dados. Se houver uma violação de integridade de dados durante 
+                a exclusão, uma exceção DatabaseException é lançada.
+            </p>
+            <br>
+            <p>
+                Esses métodos encapsulam a lógica de negócios relacionada à manipulação de categorias e garantem que as operações no banco 
+                de dados sejam realizadas de forma segura e consistente. A classe CategoryService atua como uma camada intermediária entre os 
+                controllers e os repositories, fornecendo uma abstração de alto nível para as operações relacionadas a categorias. Isso ajuda 
+                a manter o código organizado, modular e fácil de dar manutenção.
+            </p>
+            <h1>Annotation Spring</h1>
+            <p>A classe CategoryService contém várias anotações do Spring Framework, cada uma com um propósito específico. Vou explicar o 
+                significado de cada anotação presente na classe:</p>
+            <h4>@Service:</h4>
+            <p>
+                Esta anotação marca a classe como um componente de serviço do Spring. Os componentes anotados com @Service são detectados 
+                automaticamente pelo Spring durante a varredura de componentes e são instanciados como beans gerenciados pelo contêiner 
+                do Spring. Eles geralmente representam a camada de serviço em uma aplicação Spring, onde a lógica de negócios é implementada.
+            </p>
+            <h4>@Autowired:</h4>
+            <p>
+                Esta anotação é usada para injetar dependências no Spring. No caso desta classe, a anotação @Autowired é usada para injetar 
+                uma instância de CategoryRepository na variável repository. Isso permite que a classe CategoryService acesse métodos definidos 
+                em CategoryRepository para interagir com o banco de dados.
+            </p>
+            <h4>@Transactional:</h4>
+            <p>
+                Esta anotação é usada para configurar transações declarativas em métodos ou classes. Quando aplicada a um método, como em 
+                findAllPaged, findById, insert, update e delete, indica que esses métodos devem ser executados dentro de uma transação. Além disso, 
+                o atributo readOnly = true indica que esses métodos não realizarão operações de escrita no banco de dados, apenas leitura. O método 
+                delete possui o atributo propagation = Propagation.SUPPORTS, que indica que ele suportará transações existentes se já estiverem em 
+                andamento, mas não criará uma nova transação se nenhuma estiver presente.
+            </p>
+            <h4>@Transactional (dentro do método update):</h4>
+            <p>
+                Além da anotação @Transactional aplicada ao nível do método, há outra anotação @Transactional dentro do bloco try-catch do método update. 
+                Neste caso, a anotação está sendo aplicada apenas ao bloco de código dentro do try, indicando que apenas esse bloco deve ser executado 
+                dentro de uma transação. Isso permite controlar mais precisamente o escopo da transação.
+            </p>
+            <br>
+            <p>
+                Essas anotações são fundamentais para o funcionamento correto da classe CategoryService dentro do contexto do Spring Framework. Elas 
+                ajudam a garantir que as dependências sejam injetadas corretamente, que as operações no banco de dados sejam executadas dentro do 
+                contexto de transação apropriado e que a lógica de negócios seja executada de maneira segura e consistente.
+            </p>  <br>
+            <img src="imagens/RelacionamentoCategoryService.png" alt="result"><br>
+            <p>Essa linha de código está utilizando a anotação @Autowired para injetar uma dependência do tipo CategoryRepository na variável 
+                repository da classe CategoryService.<br><br>
+                Quando uma classe é anotada com @Autowired, o Spring automaticamente detecta essa anotação e tenta encontrar uma instância 
+                adequada do tipo especificado para injetar na variável anotada. No caso específico da linha de código fornecida:<br>    <br>            
+                @Autowired: Esta anotação indica ao Spring que a dependência da variável repository deve ser injetada automaticamente pelo 
+                contêiner de IoC (Inversion of Control) do Spring. O Spring procurará uma instância de CategoryRepository e a injetará na variável 
+                repository quando a classe CategoryService for inicializada.<br>                <br>
+                private CategoryRepository repository;: Aqui, repository é uma variável privada da classe CategoryService do tipo CategoryRepository. 
+                Através da injeção de dependência realizada pelo Spring, a variável repository será inicializada com uma instância de 
+                CategoryRepository. Essa instância é fornecida pelo Spring, que gerencia o ciclo de vida dos beans na aplicação.<br>   <br>             
+                Essa abordagem de injeção de dependência ajuda a manter o código mais limpo, modular e fácil de testar, pois reduz a necessidade 
+                de criar manualmente instâncias de dependências dentro da classe e permite que o Spring gerencie as dependências e suas instâncias. 
+                Isso promove a coesão e o desacoplamento entre os diferentes componentes da aplicação.
+            </p>
 
         </div>
     </main>

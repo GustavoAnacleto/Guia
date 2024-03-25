@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets\css\estilo.css">
+    <link rel="stylesheet" href="assets\css\exercicio.css">
+    <title>Exercício</title>
+</head>
+<body class="exercicio">
+    <header class="cabecalho">
+        <h1>Guia JAVA</h1>
+        <h2>Visualização do Conteúdo</h2>
+    </header> 
+    <nav class="navegacao">
+        <a href="#" class="verde">Sem Formatação</a>
+        <a href="index.html" class="vermelho">Voltar</a>
+    </nav> 
+    <main class="principal">
+        <div class="conteudo">
+            <div class="titulo">Modelo de camadas</div>
+            <img src="imagens/camadas.png" alt="classe java">
+            <p>
+                       
+                O modelo de camadas é uma abordagem arquitetônica comum em desenvolvimento de software que organiza uma aplicação em diferentes 
+                camadas ou níveis de abstração. No contexto de uma aplicação Java com Spring, um modelo de camadas típico envolve várias camadas, 
+                cada uma com responsabilidades específicas. As camadas mais comuns são: Controller, DTO (Data Transfer Object), Service, Repository e 
+                Model.<br><br>
+                Controller: <br>
+                A camada Controller é responsável por receber as requisições HTTP dos clientes (geralmente navegadores web ou aplicativos móveis) e 
+                encaminhá-las para o processamento adequado. Os controllers no Spring geralmente são anotados com @Controller ou @RestController. 
+                Eles contêm métodos que correspondem a diferentes endpoints da API e lidam com a lógica de negócios relacionada ao processamento das 
+                requisições e respostas. <br><br>
+                DTO (Data Transfer Object): <br>
+               DTOs são objetos simples que transportam dados entre as camadas da aplicação. Eles são usados para transferir dados entre o Controller 
+               e o Service, ou entre o Service e o Repository. DTOs geralmente não contêm lógica de negócios e são projetados para serem serializados 
+               e desserializados facilmente. Eles podem ser anotados com @Data do projeto Lombok para facilitar a criação de getters, setters, equals, 
+               hashcode, e toString. <br><br>
+               Service: <br>
+               A camada Service é responsável por conter a lógica de negócios da aplicação. Os serviços são onde a maioria das operações e regras de 
+               negócios são implementadas. Eles orquestram a interação entre os diferentes componentes da aplicação, como os controllers e os repositories. 
+               Os serviços geralmente são anotados com @Service e encapsulam operações complexas que envolvem múltiplas entidades ou regras de negócio.<br><br>
+               Repository:<br>
+               A camada Repository é responsável por interagir com o banco de dados ou outro mecanismo de persistência de dados. Os repositórios são 
+               interfaces que definem métodos para realizar operações CRUD (Create, Read, Update, Delete) em entidades específicas. Eles são implementados 
+               pelo Spring Data JPA, que fornece implementações padrão para esses métodos com base nas convenções de nomenclatura.<br><br>
+               Model:<br>
+               A camada Model contém as classes de modelo ou entidades que representam os dados da aplicação. Essas classes geralmente correspondem 
+               diretamente às tabelas do banco de dados e são anotadas com @Entity. Elas representam os objetos de domínio da aplicação e contêm os 
+               atributos e métodos associados a esses objetos.<br><br>
+               Em uma aplicação Java com Spring, essas camadas trabalham juntas para fornecer uma arquitetura modular e organizada, facilitando a 
+               manutenção, escalabilidade e teste da aplicação. Cada camada tem uma responsabilidade clara e pode ser desenvolvida e testada de forma 
+               independente, o que torna o código mais legível, modular e fácil de dar manutenção.
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+        </div>
+    </main>
+    <footer class="rodape">
+        Guga-Nascimento
+    </footer>
+</body>
+</html>
