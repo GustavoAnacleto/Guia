@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets\css\estilo.css">
-    <link rel="stylesheet" href="assets\css\exercicio.css">
+    <link rel="stylesheet" href="../assets\css\estilo.css">
+    <link rel="stylesheet" href="../assets\css\exercicio.css">
     <title>Exercício</title>
 </head>
 <body class="exercicio">
@@ -14,7 +14,7 @@
     </header> 
     <nav class="navegacao">
         <a href="#" class="verde">Sem Formatação</a>
-        <a href="index.html" class="vermelho">Voltar</a>
+        <a href="../index.html" class="vermelho">Voltar</a>
     </nav> 
     <main class="principal">
         <div class="conteudo">
@@ -42,10 +42,10 @@
                 Adicionar dependência ao projeto: Primeiro, você precisa adicionar a dependência do H2 ao seu projeto 
                 Spring. Você pode fazer isso editando o arquivo pom.xml se estiver usando Maven, ou build.gradle se 
                 estiver usando Gradle. Aqui está um exemplo de dependência Maven:
-                <br><img src="imagens/maven1.png" alt="classe java"><br>Configurar o DataSource no Spring: 
+                <br><img src="../imagens/maven1.png" alt="classe java"><br>Configurar o DataSource no Spring: 
                 No arquivo de configuração do Spring (application.properties ou application.yml), configure o 
                 DataSource para usar o H2. Aqui está um exemplo de configuração usando o application.properties:
-                <br><img src="imagens/loginH2.png" alt="classe java"><br>Neste exemplo, estamos configurando o 
+                <br><img src="../imagens/loginH2.png" alt="classe java"><br>Neste exemplo, estamos configurando o 
                 DataSource para usar o H2 em memória (jdbc:h2:mem:testdb), com o usuário padrão sa e senha password.
                 Criar esquema e dados de teste: Você pode definir scripts SQL para criar o esquema do banco de dados 
                 e inserir dados de teste. Você pode fazer isso usando o arquivo schema.sql e data.sql na pasta 
@@ -53,7 +53,7 @@
                 Escrever testes usando o H2: Agora você pode escrever testes que utilizam o banco de dados H2. 
                 O Spring irá configurar automaticamente o DataSource para usar o H2 durante os testes. Aqui está um 
                 exemplo de um teste usando JUnit: 
-                <br> <img src="imagens/testeH2.png" alt="classe java"> <br> 
+                <br> <img src="../imagens/testeH2.png" alt="classe java"> <br> 
                 Neste exemplo, MyService é o serviço que você deseja testar, e o Spring injetará automaticamente 
                 uma instância desse serviço no teste.
                 Executar os testes: Agora você pode executar os testes como faria normalmente, e o Spring configurará 
@@ -62,7 +62,7 @@
                 sem depender de um banco de dados externo, o que pode tornar seus testes mais rápidos e confiáveis.
             </p>
             <div class="titulo">Mapeamento JPA</div>
-            <img src="imagens/mapeamentoJPA.png" alt="classe java">
+            <img src="../imagens/mapeamentoJPA.png" alt="classe java">
             <p> @Entity:<br> 
                 A anotação @Entity é usada para marcar uma classe como uma entidade JPA (Java Persistence API). Isso significa 
                 que a classe Category representa uma entidade no contexto de um modelo de dados relacional. Quando uma classe é 
@@ -77,7 +77,7 @@
                 A chave primária é um identificador exclusivo para cada registro na tabela. No contexto do Spring 
                 Data JPA, a presença dessa anotação em um campo indica ao framework que este campo deve ser tratado 
                 como a chave primária da entidade.<br><br> 
-                @GeneratedValue(strategy = GenerationType.IDENTITY):   <br>              
+                @GeneratedValue(strategy = GenerationType.IDENTITY):   <br>
                 A anotação @GeneratedValue é usada para especificar a estratégia de geração de valores para a chave 
                 primária. No exemplo fornecido, a estratégia usada é GenerationType.IDENTITY, que é comumente usada 
                 em bancos de dados relacionais. Com essa estratégia, o banco de dados é responsável por gerar valores 

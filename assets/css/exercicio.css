@@ -38,3 +38,33 @@ body.exercicio{
     border-bottom: 1px solid #999;
     margin-bottom: 20px;
 }
+.conteudo-grid{
+    font-size: 1.6rem;
+    background-color: #fff;
+    padding: 1.5rem;
+    margin: 0 auto;
+    text-align: justify;
+    max-width: 90%;
+}
+#grid-conteudo{
+    background-color: #181918;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill,minmax(33%,1fr)
+    );
+    grid-gap: 1px;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+.grid div{
+    background-color: #fff;
+    text-align: center;
+    padding: 2px;
+}
+.paragrafo{
+    background-color: #fff;
+    text-align: center;
+    padding: 2px;
+}

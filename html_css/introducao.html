@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/estilo.css">
+    <link rel="stylesheet" href="../assets/css/exercicio.css">
+    <title>Exercício</title>
+</head>
+<body class="exercicio">
+    <header class="cabecalho">
+        <h1>Guia HTML & CSS</h1>
+        <h2>Visualização do Conteúdo</h2>
+    </header> 
+    <nav class="navegacao">
+        <a href="#" class="verde">Sem Formatação</a>
+        <a href="../htmlcss.html" class="vermelho">Voltar</a>
+    </nav> 
+    <main class="principal">
+        <div class="conteudo">
+            <div class="titulo">
+                Prototipo de modelo responsivo
+            </div>
+            <div>
+                <h2>Explicando a estrutura inicial do HTML</h2>
+                <figure>
+                    <img src="../imagens/html01.png" alt="estrutura inicial do html">
+                    <figcaption>Mostrando nessa imagem a estrutura inicial do HTML</figcaption>
+                </figure>
+                    <p>
+                        <br>=> !DOCTYPE html>: Esta tag define o tipo de documento e declara que o documento é um HTML5. Ela não tem uma tag de fechamento e deve ser a primeira linha do seu documento HTML.
+                        <br><br>=> html lang="pt">: Esta tag define o início do documento HTML e contém todo o conteúdo HTML. O atributo lang="pt" especifica o idioma do documento como português.
+                        <br><br>=> head>: Esta tag contém metadados sobre o documento HTML, como o título da página, links para folhas de estilo CSS, scripts JavaScript e outros metadados. Não é renderizado na página.
+                        <br><br>=> meta charset="UTF-8">: Esta tag define o conjunto de caracteres utilizado no documento como UTF-8, que é um formato de codificação que suporta uma ampla variedade de caracteres, incluindo caracteres especiais e acentos.
+                        <br><br>=> meta name="viewport" content="width=device-width, initial-scale=1.0">: Esta tag define a configuração de visualização do viewport para dispositivos móveis. Ela informa ao navegador que o width (largura) do viewport deve ser igual à largura do dispositivo e que a escala inicial é 1.0.
+                        <br><br>=> title>Document /title>: Esta tag define o título do documento que aparece na barra de título do navegador ou na guia do navegador quando a página é aberta. O texto dentro das tags title> e /title> é o título da página.
+                        <br><br>=> body>: Esta tag contém todo o conteúdo visível da página HTML, incluindo texto, imagens, links, formulários e outros elementos. Todo o conteúdo que é exibido no navegador é colocado dentro das tags body> e /body>.
+                    </p>
+                    <hr>
+                    <h3>link rel="stylesheet" href="css/estilo.css"></h3>
+                    <p>
+                        <br>=> rel="stylesheet": Este atributo especifica o tipo de relação entre o documento atual e o documento vinculado. No caso de uma folha de estilo CSS, o valor "stylesheet" indica que o documento vinculado é uma folha de estilo para o documento atual. <br>
+                        <br>=> href="css/estilo.css": Este atributo especifica o local do documento vinculado. No exemplo dado, o valor "css/estilo.css" indica que o navegador deve procurar o arquivo de estilo CSS chamado "estilo.css" dentro de um diretório chamado "css" no mesmo diretório que o documento HTML atual. Isso significa que o arquivo de estilo está localizado na pasta "css" e seu nome é "estilo.css". <br>
+                        <br>=> Quando o navegador encontra essa tag link>, ele carrega o arquivo CSS especificado no atributo href e aplica as regras de estilo contidas nele ao conteúdo do documento HTML, permitindo que o desenvolvedor controle a aparência da página. Isso é fundamental para a criação de layouts visualmente atraentes e consistentes em páginas da web.
+                    </p><hr>
+                    <h3>header, nav e a</h3>
+                    <figure>
+                        <img src="../imagens/html02.png" alt="header, nav e a">
+                        <figcaption></figcaption>
+                    </figure>
+                    <p>
+                        <br>=> header>: Esta é uma tag semântica do HTML5 usada para representar o cabeçalho de uma página ou seção. Geralmente, o conteúdo dentro de um header> contém elementos que fornecem informações introdutórias ou de navegação para o restante da página. <br>
+                        <br>=> nav>: Esta é uma tag que indica a área de navegação do cabeçalho. É frequentemente usada para agrupar links de navegação. Neste caso, os links de navegação estão dentro da tag nav>. <br>
+                        <br>=> a href="#">LINK A |/ a>, a href="#">LINK B |/a>, a href="#">LINK C /a>: Estas são tags a>, que representam links de âncora em HTML. O atributo href="#" indica que esses links apontam para o mesmo local na página atual, funcionando como marcadores de posição. Eles não têm um destino específico definido, pois o "#" é uma referência a um local vazio na própria página. O texto dentro das tags a> são os textos dos links.
+                    </p><hr>
+                    <h3>div, button, section, figure, img, figcaption, br e p</h3>
+                    <figure>
+                        <img src="../imagens/html03.png" alt="header, nav e a">
+                        <figcaption></figcaption>
+                    </figure>
+                    <p>
+                        => div>: Esta é uma tag de divisão que é usada para agrupar elementos em um bloco genérico. Geralmente, é utilizada quando não há uma tag mais específica disponível para agrupar os elementos. Neste caso, contém um botão. <br>
+                        <br>=> button>: Esta é uma tag que representa um botão interativo que pode ser clicado pelo usuário. No exemplo, o botão possui o texto "Botão da caixa". O comportamento do botão é definido pelo JavaScript, caso haja algum script associado. <br>
+                        <br>=> section>: Esta é uma tag semântica do HTML5 que define uma seção ou área temática dentro de um documento HTML. Ela é usada para agrupar conteúdos relacionados. Neste caso, contém uma imagem, texto e uma legenda. <br>
+                        <br>=> figure>: Esta é uma tag usada para encapsular qualquer conteúdo que seja referenciado como uma única unidade. Geralmente é usado para imagens, vídeos, diagramas, entre outros. <br>
+                        <br>=> img class="imagens-site" src="img/imagem-exemplo.png" alt="Imagem da primeira section">: Esta é uma tag de imagem que exibe uma imagem na página. O atributo src especifica o caminho para a imagem, enquanto o atributo alt fornece um texto alternativo que é exibido se a imagem não puder ser carregada. A classe imagens-site pode ser usada para aplicar estilos específicos a esta imagem através de CSS. <br>
+                        <br>=> figcaption>: Esta tag é usada para definir uma legenda para a figure>. A legenda é um texto que descreve a imagem. Neste caso, a legenda é "Legenda para imagem". <br>
+                        <br>=> br>: Esta é uma tag de quebra de linha, que é usada para inserir uma quebra de linha no texto. <br>
+                        <br>=> p>: Esta é uma tag de parágrafo que é usada para definir um parágrafo de texto. Aqui, duas tags p> são usadas para inserir texto explicativo sobre análise de sistemas.
+
+
+                    </p>
+                    
+                
+                
+                
+                    
+                
+            </div>
+
+        </div>
+    </main>
+    <footer class="rodape">
+        Guga-Nascimento
+    </footer>
+</body>
+</html>
