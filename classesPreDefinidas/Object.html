@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/estilo.css">
+    <link rel="stylesheet" href="../assets/css/exercicio.css">
+    <title>Classes Java</title>
+</head>
+<body class="exercicio">
+    <header class="cabecalho">
+        <h1>Guia JAVA</h1>
+        <h2>Visualização do Conteúdo</h2>
+    </header> 
+    <nav class="navegacao">
+        <a href="#" class="verde">Sem Formatação</a>
+        <a href="../index.html" class="vermelho">Voltar</a>
+    </nav> 
+    <main class="principal">
+        <div class="conteudo">
+
+            <div class="titulo">
+                <h4>Object</h4>
+                <p>
+                    A classe 'Object' é a classe base de todas as outras classes em Java, direta ou indiretamente estendem(herdam) da classe 'Object'. 
+                    Portanto, 'Object' é a superclasse de todas as classes em Java.
+                </p>
+                <p>
+                    A classe 'Object' fornece um conjunto de métodos que estão disponíveis para todas as classes em Java. Aqui abaixo estão alguns dos métodos mais comuns fornecidos pela classe 'Object':
+                </p>
+                <ul>
+                    <li>toString(): Retorna uma representação de string do objeto.</li>
+                    <p>
+                        O método toString() é um método em Java que pertence à classe Object. Ele é usado para retornar uma representação de string do objeto. Quando você imprime um objeto usando System.out.println() ou concatena-lo com uma string usando o operador +, o método toString() é automaticamente chamado para obter uma representação legível do objeto em forma de string.
+                    </p>
+                    <p>
+                        Por padrão, a implementação do método toString() na classe Object retorna uma string que consiste no nome da classe do objeto seguido pelo código hash hexadecimal do objeto. Por exemplo:
+                    </p>
+                    <figure>
+                        <figcaption>toString()</figcaption>
+                        <img src="../imagens/toString.png.png" width="750px" height="410px" alt="imagem de precedência">
+                    </figure>
+                    <li>equals(Object obj): verifica se o objeto atual é igual a outro objeto especificado.</li>
+                    <p>
+                        O método equals(Object obj) é um método em Java que é usado para verificar se dois objetos são iguais. Ele compara o objeto atual com o objeto passado como argumento (obj) para determinar se eles representam a mesma entidade. <br>
+
+                            Por padrão, a implementação do método equals() na classe Object verifica se os dois objetos referem-se ao mesmo local de memória, ou seja, se são exatamente o mesmo objeto. No entanto, muitas classes personalizadas sobrescrevem esse método para definir um comportamento de igualdade personalizado. <br>
+
+                            Ao sobrescrever o método equals() em uma classe personalizada, você pode definir o que significa que dois objetos dessa classe são considerados iguais. Normalmente, isso envolve a comparação dos valores dos campos dos objetos. Por exemplo.
+                    </p>
+
+                    <li>hashCode():</li>
+                    <p>
+                        O método hashCode() é um método em Java que retorna um valor numérico que representa o código de dispersão (hash code) de um objeto. Este código de dispersão é usado principalmente em estruturas de dados como tabelas de hash para melhorar a eficiência de operações de busca, como aquelas implementadas em coleções como HashMap, HashSet, etc.
+
+A implementação padrão do método hashCode() na classe Object retorna um código de dispersão baseado no endereço de memória do objeto, o que significa que dois objetos diferentes terão quase certeza de ter códigos de dispersão diferentes, mesmo que sejam iguais de acordo com o método equals().
+
+Ao sobrescrever o método hashCode() em uma classe personalizada, é importante garantir que ele seja consistente com o método equals(). Isso significa que dois objetos que são iguais de acordo com o método equals() devem produzir o mesmo código de dispersão.
+                    </p>
+                    <figure>
+                        <figcaption>hashCode(): Retorna um valor de hash para o Objeto.</figcaption>
+                        <img src="../imagens/hashCode.png" width="950px" height="710px" alt="imagem de precedência">
+                    </figure>
+                </ul>                
+            </div>
+
+        </div>
+    </main>
+    <footer class="rodape">
+        Guga-Nascimento
+    </footer>
+</body>
+</html>

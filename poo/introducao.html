@@ -55,7 +55,43 @@
                 Na imagem vimos que a variável x recebe o endereço de memória que o obj está instanciado. quando declaramos x = new Triangle(); o valor de x recebe um endereço de memória onde está instanciado 
                 o obj do tipo Triangle().
             </p>
-            
+            <div class="titulo">
+                <h4>3 Soluções do mesmo exercicio</h4>
+            </div>
+            <p>
+                Fazer um programa para ler um valor numérico qualquer, e daí mostrar 
+                quanto seria o valor de uma circunferência e do volume de uma esfera 
+                para um raio daquele valor. Informar também o valor de PI com duas 
+                casas decimais.
+            </p>
+            <figure>
+                <figcaption>Método na própria Classe</figcaption>
+                <img src="../imagens/img-poo006.png" width="450px" height="510px" alt="imagem de precedência">
+            </figure>
+            <p>Nesse exemplo os métodos foram colocados ao final do bloco main, e definidos como static. Normalmente não se usa essa forma profissionalmente. </p>
+            <figure>
+                <figcaption>Explicando versão 2</figcaption>
+                <img src="../imagens/img-poo007.png" width="650px" height="510px" alt="imagem de precedência">
+            </figure>
+            <p>
+                Nesta versão, criamos a classe Calculator, na qual inserimos dois métodos: circumference e volume. <br>
+
+                No Program02, instanciamos o objeto 'calc', que é do tipo da classe criada anteriormente, Calculator (linha 14). <br>
+
+                Depois, solicitamos o raio ao usuário e guardamos na variável 'radius'. Para o cálculo da circunferência, criamos a variável 'c' e chamamos o método circumference usando o objeto 'calc', guardando o valor na variável 'c'. O mesmo processo é feito com o método volume, só que guardando o valor na variável 'v'. Em seguida, solicitamos a impressão na tela com printf."
+            </p>
+            <hr>
+            <figure>
+                <figcaption>Explicando versão 3</figcaption>
+                <p>
+                    Nessa versão oque muda é que por ser calculos estáticos podemos chamar a class Calculator chamando o método direto, assim não 
+                    precisamos instanciar o obj calc'.
+                </p>
+                <img src="../imagens/img-poo008.png" width="650px" height="510px" alt="imagem de precedência">
+                <p>
+                    Com isso já fica atribuido o valor do calculos dos métodos direto a variável 'c' e 'v' como mostra a imagem.
+                </p>
+            </figure>
         </div>
     </main>
     <footer class="rodape">
