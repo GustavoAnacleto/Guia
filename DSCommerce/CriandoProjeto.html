@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/estilo.css">
+    <link rel="stylesheet" href="../assets/css/exercicio.css">
+    <title>Classes Java</title>
+</head>
+<body class="exercicio">
+    <header class="cabecalho">
+        <h1>Guia JAVA</h1>
+        <h2>Visualização do Conteúdo</h2>
+    </header> 
+    <nav class="navegacao">
+        <a href="#" class="verde">Sem Formatação</a>
+        <a href="../index.html" class="vermelho">Voltar</a>
+    </nav> 
+    <main class="principal">
+        <div class="conteudo">
+
+            <div class="titulo">
+                <h4>Iniciando Projeto</h4>
+            </div>
+            <h2>Criando o projeto DSCommerce</h2>
+            <p>
+                No spring Intialzr editamos os dados necessários e criamos o projeto na pasta DSCommerce, abri o Intellij e procureio o caminho que se 
+                encontrava no Onedrive dentro da area de trabalho. <br>
+                Depois de abri o projeto esperei os downloads das dependêcias que no caso foram 3 'spring web','JPA' e 'H2-console', testando em seguida no 
+                navegador usando o caminho localhost:8080, que é a porta padrão do Tomcat.
+            </p>
+            <h3>Criando primeira entidade</h3>
+            <p>
+                Para iniciar o desenvolvimento do projeto precisamos iniciar a criação com uma entidade independente. 'Mas como descobrimos qual é a entidade independente?' <br>
+                R: É a entidade que tenha o relacionamento 1 para muitos.
+            </p>
+            <figure>
+                <figcaption>Projeto UML</figcaption>
+                <img src="../imagens/dsc-001.png" width="750px" height="410px" alt="imagem de precedência">
+                <figcaption>Nesse caso iniciaremos pela classe User</figcaption>
+            </figure>
+            <p>
+                Criado a classe User coloquei os atributos e construtores(um com todos os argumentos e um sem nenhum), e criei os gets e sets de todos os atributos.
+            </p>
+            <h3>Iniciando a configuração do banco de dados H2</h3>
+            <p>
+                Siga o caminho dscommerce/src/resources: Aqui você encontra o arquivo application.properties, nesse arquivo você cola a seguinte configuração: <br>
+                <strong>spring.profiles.active=test <br>
+                        spring.jpa.open-in-view=false</strong>
+            </p>
+            <p>
+                Duplique o arquivo vá em renomear e edite para: application-test.properties e dentro desse arquivo coloque a seguinte configuração. <br>
+                <strong>
+                    # Dados de conexão com o banco H2 <br>
+                    spring.datasource.driverClassName=org.h2.Driver<br>
+                    spring.datasource.url=jdbc:h2:mem:testdb<br>
+                    spring.datasource.username=sa<br>
+                    spring.datasource.password=<br>
+                    # H2 Client<br>
+                    spring.h2.console.enabled=true<br>
+                    spring.h2.console.path=/h2-console<br>
+                    # JPA, SQL<br>
+                    spring.jpa.database-platform=org.hibernate.dialect.H2Dialect<br>
+                    spring.jpa.defer-datasource-initialization=true<br>
+                    spring.jpa.show-sql=true<br>
+                    spring.jpa.properties.hibernate.format_sql=true
+                </strong>
+            </p>
+            <h3>Iniciando o mapeamento JPA</h3>
+            <figure>
+                <figcaption>Repare nas anotações com @</figcaption>
+                <img src="../imagens/dsc-002.png" width="750px" height="410px" alt="imagem de precedência">
+                <figcaption>Cada uma indica uma coisa a ser feita pelo Spring</figcaption>
+                <Ul>
+                    <li>@Entity: Indica que a classe User é uma entidade.</li>
+                    <li>@Table: Cria no banco de dados uma tabela chamada tb_user.</li>
+                    <li>@Id: indica que o atributo abaixo é o Id da tabela.</li>
+                    <li> @GeneratedValue(strategy = GenerationType.IDENTITY): Faz que o Id seja incrementado automaticamente.</li>
+                </Ul>
+            </figure>
+            <p>
+                Agora vamos testar, para isso reinicio o projeto e no navegador acesso <strong>http://localhost:8080/h2-console</strong>
+            </p>
+
+        </div>
+    </main>
+    <footer class="rodape">
+        Guga-Nascimento
+    </footer>
+</body>
+</html>

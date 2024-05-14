@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/estilo.css">
+    <link rel="stylesheet" href="../assets/css/exercicio.css">
+    <title>Classes Java</title>
+</head>
+<body class="exercicio">
+    <header class="cabecalho">
+        <h1>Guia JAVA</h1>
+        <h2>Visualização do Conteúdo</h2>
+    </header> 
+    <nav class="navegacao">
+        <a href="#" class="verde">Sem Formatação</a>
+        <a href="../index.html" class="vermelho">Voltar</a>
+    </nav> 
+    <main class="principal">
+        <div class="conteudo">
+
+            <div class="titulo">
+                <h4>Order class</h4>
+            </div>
+            <p>Criamos a class Order e iniciamos o relacionamento entre (Order & User) esse relacionamento é um para muitos sendo um usuário pode ter
+                vários pedidos. <br>
+                <figure>
+                    <figcaption>Relacionamento para um</figcaption>
+                    <img src="../imagens/dsc-003.png" width="750px" height="410px" alt="imagem de precedência">
+                </figure>
+                <ul>
+                    <li>@ManyToOne: indica que o relacionamento é para um</li>
+                    <li> @JoinColumn(name = "client_id"): cria uma coluna na tabela tb-order que servira de chave estrangeira para relacionar com User.</li>
+                </ul>
+                No Spring Boot, ao implementar uma entidade em seu projeto, se ela tem um relacionamento para um, geralmente você já implementa o relacionamento. Isso significa que, ao definir suas entidades no Spring Boot, você pode utilizar anotações como @OneToOne, @ManyToOne, ou @JoinColumn para representar os relacionamentos entre as entidades. Isso permite que o Spring Boot faça a configuração do mapeamento entre as tabelas do banco de dados automaticamente, facilitando o desenvolvimento e reduzindo a necessidade de escrever consultas SQL manualmente. 
+            </p>
+            <h4>Do outro lado, na classe User</h4>
+            <p>
+                vou criar o atributo order do tipo Order e colocar: <br>
+                <strong>
+                    @OneToMany(mappedBy = "client") <br>
+ private            List Order> orders = new ArrayList >();
+                </strong>
+            </p>
+
+        </div>
+    </main>
+    <footer class="rodape">
+        Guga-Nascimento
+    </footer>
+</body>
+</html>
