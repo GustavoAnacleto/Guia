@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/estilo.css">
+    <link rel="stylesheet" href="../assets/css/exercicio.css">
+    <title>Java</title>
+</head>
+<body class="exercicio">
+    <header class="cabecalho">
+        <h1>Guia JAVA</h1>
+        <h2>Visualização do Conteúdo</h2>
+    </header> 
+    <nav class="navegacao">
+        <a href="#" class="verde">Sem Formatação</a>
+        <a href="../index.html" class="vermelho">Voltar</a>
+    </nav> 
+    <main class="principal">
+        <div class="conteudo">
+
+            <div class="titulo">
+                <h4>Muitos para muitos com classe de associação</h4>
+            </div>
+            <figure>
+                <figcaption>Analise a imagem</figcaption>
+                <img src="../imagens/dsc-007.png" width="750px" height="410px" alt="imagem de precedência">
+                <figcaption>A classe OrderItemPK é uma chave composta que referencia a entidade Order e a entidade Product.</figcaption>
+            </figure>
+            <p>A anotetion @Embeddable faz que esses atributos dessa classe 'OrdemItemPK' possam ser embutidos por outras classes.</p>
+            <figure>
+                <figcaption>Analise a imagem</figcaption>
+                <img src="../imagens/dsc-008.png" width="750px" height="410px" alt="imagem de precedência">
+            </figure>
+            <p>No retângulo amarelo mostramos que com a chamada do @EmbeddedId criamos um novo obj que recebe order_id e product_id inserindo essas colunas na tabela tb_order_item como mostra a imagem abaixo</p>
+            <figure>
+                <figcaption>Analise a imagem</figcaption>
+                <img src="../imagens/dsc-009.png" width="350px" height="210px" alt="imagem de precedência">
+            </figure>
+            <p>No retângulo azul mostramos como damos o get no dado correto para construir o construtor da class OrdemItem, chamando o obj id. para dar um set que 
+                vai dentro da class OrdemItem e inseri em seu atributo order ou product o dado relevante criando assim o id da classe composta. 
+            </p>
+            <button>Para mais detalhes baixe o <a href="../imagens/02 Modelo de domínio e ORM (slides).pdf" target="_blank">PDF</a></button>
+        </div>
+    </main>
+    <footer class="rodape">
+        Guga-Nascimento
+    </footer>
+</body>
+</html>

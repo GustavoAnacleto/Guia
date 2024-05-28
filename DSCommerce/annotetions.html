@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/estilo.css">
+    <link rel="stylesheet" href="../assets/css/exercicio.css">
+    <title>Java</title>
+</head>
+<body class="exercicio">
+    <header class="cabecalho">
+        <h1>Guia JAVA</h1>
+        <h2>Visualização do Conteúdo</h2>
+    </header> 
+    <nav class="navegacao">
+        <a href="#" class="verde">Sem Formatação</a>
+        <a href="../index.html" class="vermelho">Voltar</a>
+    </nav> 
+    <main class="principal">
+        <div class="conteudo">
+
+            <div class="titulo">
+                <h1>Annotetions</h1>
+            </div>
+            <p>
+                <h2>@Column(columnDefinition = "TEXT")</h2>
+                A anotação @Column(columnDefinition = "TEXT") é usada em JPA (Java Persistence API) para especificar detalhes sobre a coluna que será criada no banco de dados para o campo anotado. Vamos detalhar o que isso significa:
+            </p>
+            <p>
+                @Column: Essa anotação é usada para definir mapeamentos específicos entre um campo da entidade e uma coluna no banco de dados. É opcional, mas permite um controle maior sobre a estrutura da tabela gerada.
+            </p>
+            <p>
+                columnDefinition = "TEXT": A propriedade columnDefinition permite especificar a definição exata da coluna no banco de dados. Neste caso, "TEXT" é um tipo de dado SQL que indica que a coluna será do tipo TEXT.
+            </p>
+            <h4>O Tipo 'TEXT'</h4>
+            <p>
+                SQL TEXT Type: No contexto de bancos de dados SQL, o tipo TEXT é usado para armazenar grandes quantidades de texto. Diferente do tipo VARCHAR, que tem um limite de tamanho, o tipo TEXT pode armazenar texto de tamanho muito maior.
+            </p>
+            <h4>Por Que Usar columnDefinition</h4>
+            <p>
+                Especificidade do Tipo de Dados: Você precisa especificar um tipo de dados exato que não é coberto pelos mapeamentos padrão da JPA.
+            </p>
+            <p>
+                Compatibilidade com Banco de Dados: Diferentes bancos de dados podem ter tipos de dados específicos, e columnDefinition permite definir o tipo de dados conforme necessário para um banco de dados específico.
+            </p>
+            <p>
+                Customização Avançada: Quando você quer controlar aspectos avançados da coluna, como tipos de dados específicos, restrições, ou características que não são diretamente suportadas pelas anotações padrão de JPA.
+            </p>
+            <h4>Benefícios</h4>
+            <p>
+                Armazenamento de Texto Longo: Permite armazenar grandes quantidades de texto sem se preocupar com o limite de tamanho dos tipos de dados como VARCHAR.
+                <br>Flexibilidade: Fornece flexibilidade ao definir tipos de colunas específicos que atendem aos requisitos do seu banco de dados.
+            </p>
+            <h4>Considerações</h4>
+            <p>
+                Compatibilidade: Certifique-se de que o tipo TEXT é suportado pelo seu banco de dados específico. A maioria dos bancos de dados modernos suporta TEXT, mas a sintaxe e o suporte podem variar.
+            </p>
+            <p>
+                Desempenho: Armazenar grandes quantidades de texto pode impactar o desempenho das consultas. Considere o design do seu banco de dados e o volume de dados esperado.
+            </p>
+            <h2>@Column(unique = true)</h2>            
+            <p>
+                @Column: Essa anotação é usada para definir mapeamentos específicos entre um campo da entidade e uma coluna no banco de dados. Embora a anotação @Column seja opcional, ela permite configurar diversas propriedades da coluna.
+            </p>
+            <p>
+                unique = true: A propriedade unique da anotação @Column é usada para indicar que a coluna deve ter uma restrição de unicidade. Isso significa que não pode haver duas ou mais linhas na tabela com o mesmo valor nesta coluna.
+            </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </main>
+    <footer class="rodape">
+        Guga-Nascimento
+    </footer>
+</body>
+</html>

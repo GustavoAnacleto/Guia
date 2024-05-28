@@ -42,6 +42,18 @@
  private            List Order> orders = new ArrayList >();
                 </strong>
             </p>
+            <div class="titulo">
+                <h4>Explicação:</h4>
+            </div>
+            <p>
+                Na imagem acima, é mostrada a classe Order e, ao final da imagem, temos: <br>
+
+@ManyToOne: que significa muitos para um. <br>
+@JoinColumn: que significa juntar coluna. <br>
+Com isso, no banco de dados do projeto é criada uma coluna chamada client_id, que faz referência ao atributo client da classe User. <br>
+
+Isso quer dizer que, quando um cliente cria um pedido, o sistema automaticamente vincula um número chamado id daquele pedido com aquele cliente. Esse número é único em todo o sistema e não se repete para outro pedido.
+            </p>
 
         </div>
     </main>

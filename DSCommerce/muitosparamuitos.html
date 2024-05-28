@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/estilo.css">
+    <link rel="stylesheet" href="../assets/css/exercicio.css">
+    <title>Classes Java</title>
+</head>
+<body class="exercicio">
+    <header class="cabecalho">
+        <h1>Guia JAVA</h1>
+        <h2>Visualização do Conteúdo</h2>
+    </header> 
+    <nav class="navegacao">
+        <a href="#" class="verde">Sem Formatação</a>
+        <a href="../index.html" class="vermelho">Voltar</a>
+    </nav> 
+    <main class="principal">
+        <div class="conteudo">
+
+            <div class="titulo">
+                <h4>Relacionamento muitos para muitos</h4>
+            </div>
+            <figure>
+                <figcaption>Analise a imagem</figcaption>
+                <img src="../imagens/dsc-005.png" width="450px" height="200px" alt="imagem de precedência">
+                <figcaption>Traduzindo</figcaption>
+            </figure>
+            <ul>
+                <li>
+                    Definição do Relacionamento: A anotação @ManyToMany na classe Product indica que um produto pode estar associado a várias categorias, e uma categoria pode estar associada a vários produtos.
+                </li>
+                <li>
+                    Tabela de Junção: A anotação @JoinTable define a tabela intermediária (tb_product_category) que armazena essas associações. Esta tabela tem duas colunas principais:
+
+                    <br>product_id: Referencia a chave primária da tabela Product.
+                    <br>category_id: Referencia a chave primária da tabela Category.
+                </li>
+                <li>
+                    Armazenamento das Associações: Quando você associa um produto a várias categorias, ou vice-versa, essas associações são armazenadas na tabela tb_product_category. Cada linha dessa tabela representa uma associação entre um produto e uma categoria específica.
+                </li>
+            </ul>
+            <figure>
+                <figcaption>Analise a imagem</figcaption>
+                <img src="../imagens/dsc-006.png" width="450px" height="150px" alt="imagem de precedência">
+                <figcaption>Traduzindo</figcaption>
+            </figure>
+            <p>A anotação @ManyToMany(mappedBy = "categories") na classe Category indica que esta é o lado inverso do relacionamento muitos-para-muitos definido na classe Product. O valor de mappedBy ("categories") refere-se ao nome do atributo na classe Product que mapeia o relacionamento muitos-para-muitos.</p>
+            <h4>Funcionamento</h4>
+            <ul>
+                <li>
+                    Lado Proprietário e Inverso: No relacionamento muitos-para-muitos, um dos lados é considerado o proprietário do relacionamento. O lado proprietário é responsável por persistir a tabela de junção. No exemplo, a classe Product é o lado proprietário porque possui a anotação @JoinTable. O lado inverso (Category) usa mappedBy para indicar que a gestão da tabela de junção é feita pela outra entidade (Product).
+                </li>
+                <li>
+                    Tabela de Junção: A tabela de junção (tb_product_category) é gerida pela entidade Product. Essa tabela contém as colunas product_id e category_id, que armazenam as chaves primárias das entidades Product e Category, respectivamente.
+                </li>
+                <li>
+                    Sincronização: Quando você associa um produto a várias categorias ou uma categoria a vários produtos, JPA automaticamente gerencia as entradas na tabela de junção com base nas definições das anotações @ManyToMany nas entidades envolvidas.
+                </li>
+            </ul>
+        </div>
+    </main>
+    <footer class="rodape">
+        Guga-Nascimento
+    </footer>
+</body>
+</html>

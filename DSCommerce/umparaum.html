@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/estilo.css">
+    <link rel="stylesheet" href="../assets/css/exercicio.css">
+    <title>Classes Java</title>
+</head>
+<body class="exercicio">
+    <header class="cabecalho">
+        <h1>Guia JAVA</h1>
+        <h2>Visualização do Conteúdo</h2>
+    </header> 
+    <nav class="navegacao">
+        <a href="#" class="verde">Sem Formatação</a>
+        <a href="../index.html" class="vermelho">Voltar</a>
+    </nav> 
+    <main class="principal">
+        <div class="conteudo">
+
+            <div class="titulo">
+                <h4>Relacionamento um para um</h4>
+            </div>
+            <figure>
+                <figcaption>Analise a imagem</figcaption>
+                <img src="../imagens/img-dsc004.png" width="650px" height="450px" alt="imagem de precedência">
+            </figure>
+            <p>
+                <strong>@OneToOne:</strong> Essa anotação define que a relação entre a entidade que contém este campo (Order) e a entidade referenciada (Payment) é de um-para-um. Ou seja, uma instância da entidade Order está associada a exatamente uma instância da entidade Payment e vice-versa.
+            </p>
+            <p>
+                <strong>mappedBy = "order":</strong> Esta propriedade indica que a relação de um-para-um é bidirecional e que o lado dono da relação é a entidade Payment. O valor "order" se refere ao nome do atributo na entidade Payment que mapeia essa relação. Em outras palavras, na entidade Payment, há um atributo chamado order que é o dono do relacionamento.
+            </p>
+            <p>
+                <strong>cascade = CascadeType.ALL:</strong> A propriedade cascade define as operações de persistência que devem ser propagadas da entidade Order para a entidade Payment. O valor CascadeType.ALL indica que todas as operações (persistência, mesclagem, remoção, atualização, etc.) feitas na entidade Order também serão aplicadas à entidade Payment.
+            </p>
+            <p>
+                <strong> private Payment payment:</strong> Este é o campo que representa a relação com a entidade Payment. Ele deve ser do tipo da entidade que está sendo referenciada.
+            </p>
+
+        </div>
+    </main>
+    <footer class="rodape">
+        Guga-Nascimento
+    </footer>
+</body>
+</html>
